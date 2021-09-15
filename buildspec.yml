@@ -6,7 +6,7 @@ phases:
       docker: 18
   pre_build:
     commands:
-    　- echo $AWS_DEFAULT_REGION
+    　- $(echo $AWS_DEFAULT_REGION)
       - $(aws ecr get-login --region ap-northeast-2 --no-include-email)
       - REPO=$(aws ecr describe-repositories --region ap-northeast-2 --repository-names study-li --ouput text --query "repositories[0].repositoryUri")
       - IMAGE=$REPO:latest
