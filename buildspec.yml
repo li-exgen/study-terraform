@@ -12,7 +12,7 @@ phases:
   build:
     commands:
       - docker build -t $IMAGE .
-      - coker push $IMAGE
+      - docker push $IMAGE
   post_build:
     commands:
       - printf '[{"name":"study-li","imageUri":"%s"}]' $IMAGE > imagedefinitions.json 
